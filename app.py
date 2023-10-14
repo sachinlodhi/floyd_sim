@@ -37,15 +37,10 @@ def process_text():
 
 @app.route('/process_address', methods=['GET'])
 def process_address():
-    # Get the 'address' parameter from the query string
     address = request.args.get('address')
     print("indside the fucntion")
-
-    # Process the address (you can replace this with your logic)
     result = f"Processing address: {address}"
-
     json_data = extract.get_data(place_name=address)
-
     return jsonify({'result': json_data})
 
 
